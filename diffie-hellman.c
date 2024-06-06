@@ -1,8 +1,8 @@
 /**
  * Write a program to simulate diffie-hellman key exchange algorithm
- * 
- * 
- * 
+ *
+ *
+ *
  */
 
 #include <stdio.h>
@@ -10,10 +10,12 @@
 #include <math.h>
 
 // Function to compute (base^exp) % mod
-long long int power(long long int base, long long int exp, long long int mod) {
+long long int power(long long int base, long long int exp, long long int mod)
+{
     long long int result = 1;
     base = base % mod;
-    while (exp > 0) {
+    while (exp > 0)
+    {
         if (exp % 2 == 1)
             result = (result * base) % mod;
         base = (base * base) % mod;
@@ -22,7 +24,8 @@ long long int power(long long int base, long long int exp, long long int mod) {
     return result;
 }
 
-int main() {
+int main()
+{
     long long int P, G, x, a, y, b, ka, kb;
 
     // Both the persons will be agreed upon the public keys P and G
@@ -53,6 +56,15 @@ int main() {
 
     printf("Secret key for the Alice is : %lld\n", ka);
     printf("Secret Key for the Bob is : %lld\n", kb);
+
+    if (ka == kb)
+    {
+        printf("Since keys are same, the exchange is successful.\n");
+    }
+    else
+    {
+        printf("Since keys are different, the exchange is unsuccessful.\n");
+    }
 
     return 0;
 }
