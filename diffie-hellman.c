@@ -35,13 +35,15 @@ int main() {
     printf("The value of G : %lld\n\n", G);
 
     // Alice will choose the private key a
-    a = 4; // a is the chosen private key
+    printf("Enter the value of a (a private key): ");
+    scanf("%lld", &a);
     printf("The private key a for Alice : %lld\n", a);
     x = power(G, a, P); // gets the generated key
     printf("The public key x for Alice : %lld\n", x);
 
     // Bob will choose the private key b
-    b = 3; // b is the chosen private key
+    printf("\nEnter the value of b (a private key): ");
+    scanf("%lld", &b);
     printf("The private key b for Bob : %lld\n", b);
     y = power(G, b, P); // gets the generated key
     printf("The public key y for Bob : %lld\n", y);
